@@ -51,7 +51,7 @@ abstract class AbstractAnnotationDriver implements AnnotationDriverInterface
     }
 
     /**
-     * @param object $meta
+     * @param ClassMetadata $meta
      *
      * @return \ReflectionClass
      */
@@ -71,7 +71,7 @@ abstract class AbstractAnnotationDriver implements AnnotationDriverInterface
     /**
      * Checks if $field type is valid
      *
-     * @param object $meta
+     * @param ClassMetadata $meta
      * @param string $field
      *
      * @return bool
@@ -91,7 +91,7 @@ abstract class AbstractAnnotationDriver implements AnnotationDriverInterface
      * Try to find out related class name out of mapping
      *
      * @param ClassMetadata $metadata - the mapped class metadata
-     * @param $name - the related object class name
+     * @param string $name - the related object class name
      *
      * @return string - related class name or empty string if does not exist
      */

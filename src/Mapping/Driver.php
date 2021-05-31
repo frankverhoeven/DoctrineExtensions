@@ -2,6 +2,9 @@
 
 namespace Gedmo\Mapping;
 
+use Doctrine\ODM\MongoDB\Mapping\ClassMetadata;
+use Doctrine\ORM\Mapping\ClassMetadataInfo;
+
 /**
  * The mapping driver abstract class, defines the
  * metadata extraction function common among
@@ -16,7 +19,7 @@ interface Driver
      * Read extended metadata configuration for
      * a single mapped class
      *
-     * @param object $meta
+     * @param ClassMetadata|ClassMetadataInfo $meta
      *
      * @return void
      */

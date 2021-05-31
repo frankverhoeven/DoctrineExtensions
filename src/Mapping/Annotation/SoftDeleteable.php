@@ -2,6 +2,7 @@
 
 namespace Gedmo\Mapping\Annotation;
 
+use Attribute;
 use Doctrine\Common\Annotations\Annotation;
 
 /**
@@ -13,14 +14,25 @@ use Doctrine\Common\Annotations\Annotation;
  * @Annotation
  * @Target("CLASS")
  */
-final class SoftDeleteable extends Annotation
+#[Attribute(Attribute::TARGET_CLASS)]
+final class SoftDeleteable
 {
     /** @var string */
-    public $fieldName = 'deletedAt';
+    public $fieldName;
 
     /** @var bool */
-    public $timeAware = false;
+    public $timeAware;
 
     /** @var bool */
-    public $hardDelete = true;
+    public $hardDelete;
+
+    public function __construct(
+        string $fieldName = 'deletedAt',
+        bool $timeAware = false,
+        bool $hardDelete = true
+    ) {
+        $this->fieldName = $fieldName;
+        $this->timeAware = $timeAware;
+        $this->hardDelete = $hardDelete;
+    }
 }
